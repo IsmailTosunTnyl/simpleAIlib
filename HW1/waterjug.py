@@ -19,35 +19,35 @@ class WaterJug(SearchProblem):
         self.is_cost_static = is_cost_static
 
     def actions(self, state):
-        actions = []
+        
         # fill
         if state[0] < self.capacity[0]:
-            actions.append('fill 1')
+            yield('fill 1')
         if state[1] < self.capacity[1]:
-            actions.append('fill 2')
+            yield('fill 2')
         if state[2] < self.capacity[2]:
-            actions.append('fill 3')
+            yield('fill 3')
         # empty
         if state[0] > 0:
-            actions.append('empty 1')
+           yield('empty 1')
         if state[1] > 0:
-            actions.append('empty 2')
+            yield('empty 2')
         if state[2] > 0:
-            actions.append('empty 3')
+            yield('empty 3')
         # pour
         if state[0] > 0 and state[1] < self.capacity[1]:
-            actions.append('pour 1 2')
+            yield('pour 1 2')
         if state[0] > 0 and state[2] < self.capacity[2]:
-            actions.append('pour 1 3')
+            yield('pour 1 3')
         if state[1] > 0 and state[0] < self.capacity[0]:
-            actions.append('pour 2 1')
+            yield('pour 2 1')
         if state[1] > 0 and state[2] < self.capacity[2]:
-            actions.append('pour 2 3')
+            yield('pour 2 3')
         if state[2] > 0 and state[0] < self.capacity[0]:
-            actions.append('pour 3 1')
+            yield('pour 3 1')
         if state[2] > 0 and state[1] < self.capacity[1]:
-            actions.append('pour 3 2')
-        return actions
+            yield('pour 3 2')
+        
 
     def result(self, state, action):
         state = list(state)
@@ -137,23 +137,23 @@ def algorithm_runner(problem, algorithm, header,depth_limit, graph_search):
 
 
 # %% [markdown]
-# ## Main funtion
+# ## Main function
 
 # %%
 
 
 if __name__ == '__main__':
     initial_state = (0, 0, 0)
-    c1 = input("Enter capacity of jug 1: ")
+    """c1 = input("Enter capacity of jug 1: ")
     c2 = input("Enter capacity of jug 2: ")
     c3 = input("Enter capacity of jug 3: ")
     capacity = (int(c1), int(c2), int(c3))
     t1 = input("Enter target amount of water in jug 1: ")
     t2 = input("Enter target amount of water in jug 2: ")
     t3 = input("Enter target amount of water in jug 3: ")
-    goal_state = (int(t1), int(t2), int(t3))
-    #goal_state = (4, 4, 0)
-    #capacity = (8, 5, 3)
+    goal_state = (int(t1), int(t2), int(t3))"""
+    goal_state = (4, 4, 0)
+    capacity = (8, 5, 3)
 
     problem = WaterJug(initial_state, goal_state,
                        capacity, is_cost_static=False)
@@ -168,60 +168,60 @@ if __name__ == '__main__':
 # ### Collecting results
 
 # %%
-results = []
-for algo in algorithms:
-    results.append(algorithm_runner(
-        problem, algo, headers[algorithms.index(algo)],depth_limit=11, graph_search=True))
+    results = []
+    for algo in algorithms:
+        results.append(algorithm_runner(
+            problem, algo, headers[algorithms.index(algo)],depth_limit=11, graph_search=True))
 
 
 # %%
-import pandas as pd
-from matplotlib.pyplot import title
-print("********** Summary **********")
-df = pd.DataFrame(results, index=headers)
-print(df.head(5))
-df
+    import pandas as pd
+    from matplotlib.pyplot import title
+    print("********** Summary **********")
+    df = pd.DataFrame(results, index=headers)
+    #print(df.head(5))
+    df
 
 
 # %%
-df.plot.bar(figsize=(15, 5), title="Comparations with variable cost functions")
-df.plot.bar(y="Time", title="Time taken by variable cost functions")
+    df.plot.bar(figsize=(15, 5), title="Comparations with variable cost functions")
+    df.plot.bar(y="Time", title="Time taken by variable cost functions")
 
 
 # %%
-problem = WaterJug(initial_state, goal_state,
-                   capacity, is_cost_static=True)
-headers = ["Breadth First", "Depth First", "Uniform Cost_staticCost",
-           "Limited Depth First", "Iterative Limited Depth First"]
-results = []
-for algo in algorithms:
-    results.append(algorithm_runner(
-        problem, algo, headers[algorithms.index(algo)],depth_limit=11, graph_search=True))
-
-dff = pd.DataFrame(results, index=headers)
-print(dff.head(5))
-dff
+    problem = WaterJug(initial_state, goal_state,
+                       capacity, is_cost_static=True)
+    headers = ["Breadth First", "Depth First", "Uniform Cost_staticCost",
+               "Limited Depth First", "Iterative Limited Depth First"]
+    results = []
+    for algo in algorithms:
+        results.append(algorithm_runner(
+            problem, algo, headers[algorithms.index(algo)],depth_limit=11, graph_search=True))
+    
+    dff = pd.DataFrame(results, index=headers)
+    #print(dff.head(5))
+    dff
 
 
 # %%
-import matplotlib.pyplot as plt
-res = pd.concat([df.iloc[2], dff.iloc[2]], axis=1)
-res.plot.bar(figsize=(15, 5),
-             title="Comparations with static functions")
-res.iloc[0:1].plot.bar(title="Time taken by static functions")
-
+    import matplotlib.pyplot as plt
+    res = pd.concat([df.iloc[2], dff.iloc[2]], axis=1)
+    res.plot.bar(figsize=(15, 5),
+                 title="Comparations with static functions")
+    res.iloc[0:1].plot.bar(title="Time taken by static functions")
+    
 
 # %% [markdown]
 # ## Graph search False
 # ### without graph search running all algrithms takes too much time also sometimes crash
 
 # %%
-problem = WaterJug(initial_state, goal_state,
-                   capacity, is_cost_static=False)
-headers = ["Breadth First", "Depth First", "Uniform Cost_staticCost",
-           "Limited Depth First", "Iterative Limited Depth First"]
-results = []
-for algo in algorithms:
-    results.append(algorithm_runner(problem, algo, headers[algorithms.index(algo)],depth_limit=11, graph_search=False))
+    problem = WaterJug(initial_state, goal_state,
+                       capacity, is_cost_static=False)
+    headers = ["Breadth First", "Depth First", "Uniform Cost_staticCost",
+               "Limited Depth First", "Iterative Limited Depth First"]
+    results = []
+    for algo in algorithms:
+        results.append(algorithm_runner(problem, algo, headers[algorithms.index(algo)],depth_limit=11, graph_search=False))
 
 
