@@ -1,0 +1,119 @@
+
+******** Breadth First ********
+
+Capacities: (12, 8, 2)
+Fill jug 2
+(0, 8, 0)
+Pour from jug 2 to jug 1
+(8, 0, 0)
+Pour from jug 1 to jug 3
+(6, 0, 2)
+Pour from jug 3 to jug 2
+(6, 2, 0)
+Total cost: 11
+{'Time': 0.0054318904876708984, 'Cost': 11, 'max_fringe_size': 22, 'visited_nodes': 49, 'iterations': 49}
+
+****************
+
+
+******** Depth First ********
+
+Capacities: (12, 8, 2)
+Fill jug 3
+(0, 0, 2)
+Pour from jug 3 to jug 2
+(0, 2, 0)
+Fill jug 3
+(0, 2, 2)
+Pour from jug 3 to jug 2
+(0, 4, 0)
+Pour from jug 2 to jug 1
+(4, 0, 0)
+Fill jug 3
+(4, 0, 2)
+Pour from jug 3 to jug 2
+(4, 2, 0)
+Pour from jug 1 to jug 3
+(2, 2, 2)
+Pour from jug 3 to jug 2
+(2, 4, 0)
+Fill jug 3
+(2, 4, 2)
+Pour from jug 3 to jug 2
+(2, 6, 0)
+Pour from jug 2 to jug 1
+(8, 0, 0)
+Fill jug 3
+(8, 0, 2)
+Pour from jug 3 to jug 2
+(8, 2, 0)
+Pour from jug 1 to jug 3
+(6, 2, 2)
+Empty jug 3
+(6, 2, 0)
+Total cost: 22
+{'Time': 0.005629539489746094, 'Cost': 22, 'max_fringe_size': 40, 'visited_nodes': 41, 'iterations': 41}
+
+****************
+
+
+******** Uniform Cost ********
+
+Capacities: (12, 8, 2)
+Fill jug 2
+(0, 8, 0)
+Pour from jug 2 to jug 3
+(0, 6, 2)
+Pour from jug 2 to jug 1
+(6, 0, 2)
+Pour from jug 3 to jug 2
+(6, 2, 0)
+Total cost: 11
+{'Time': 0.004177093505859375, 'Cost': 11, 'max_fringe_size': 22, 'visited_nodes': 26, 'iterations': 26}
+
+****************
+
+
+******** Limited Depth First ********
+
+Capacities: (12, 8, 2)
+Fill jug 3
+(0, 0, 2)
+Pour from jug 3 to jug 2
+(0, 2, 0)
+Fill jug 3
+(0, 2, 2)
+Pour from jug 3 to jug 2
+(0, 4, 0)
+Pour from jug 2 to jug 1
+(4, 0, 0)
+Fill jug 3
+(4, 0, 2)
+Pour from jug 3 to jug 2
+(4, 2, 0)
+Fill jug 3
+(4, 2, 2)
+Pour from jug 3 to jug 1
+(6, 2, 0)
+Total cost: 13
+{'Time': 0.0018367767333984375, 'Cost': 13, 'max_fringe_size': 23, 'visited_nodes': 34, 'iterations': 34}
+
+****************
+
+
+******** Iterative Limited Depth First ********
+
+Capacities: (12, 8, 2)
+Fill jug 2
+(0, 8, 0)
+Pour from jug 2 to jug 3
+(0, 6, 2)
+Pour from jug 2 to jug 1
+(6, 0, 2)
+Pour from jug 3 to jug 2
+(6, 2, 0)
+Total cost: 11
+{'Time': 0.0030069351196289062, 'Cost': 11, 'max_fringe_size': 10, 'visited_nodes': 83, 'iterations': 83}
+
+****************
+

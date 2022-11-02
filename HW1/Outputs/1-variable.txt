@@ -1,0 +1,165 @@
+
+******** Breadth First ********
+
+Capacities: (8, 5, 3)
+Fill jug 1
+(8, 0, 0)
+Pour from jug 1 to jug 2
+(3, 5, 0)
+Pour from jug 2 to jug 3
+(3, 2, 3)
+Pour from jug 3 to jug 1
+(6, 2, 0)
+Pour from jug 2 to jug 3
+(6, 0, 2)
+Pour from jug 1 to jug 2
+(1, 5, 2)
+Pour from jug 2 to jug 3
+(1, 4, 3)
+Pour from jug 3 to jug 1
+(4, 4, 0)
+Total cost: 15
+{'Time': 0.018971681594848633, 'Cost': 15, 'max_fringe_size': 29, 'visited_nodes': 114, 'iterations': 114}
+
+****************
+
+
+******** Depth First ********
+
+Capacities: (8, 5, 3)
+Fill jug 3
+(0, 0, 3)
+Pour from jug 3 to jug 2
+(0, 3, 0)
+Fill jug 3
+(0, 3, 3)
+Pour from jug 3 to jug 2
+(0, 5, 1)
+Pour from jug 3 to jug 1
+(1, 5, 0)
+Pour from jug 2 to jug 3
+(1, 2, 3)
+Pour from jug 3 to jug 1
+(4, 2, 0)
+Pour from jug 2 to jug 3
+(4, 0, 2)
+Pour from jug 1 to jug 2
+(0, 4, 2)
+Pour from jug 3 to jug 1
+(2, 4, 0)
+Pour from jug 2 to jug 3
+(2, 1, 3)
+Pour from jug 3 to jug 1
+(5, 1, 0)
+Empty jug 2
+(5, 0, 0)
+Fill jug 3
+(5, 0, 3)
+Pour from jug 3 to jug 2
+(5, 3, 0)
+Pour from jug 1 to jug 3
+(2, 3, 3)
+Pour from jug 3 to jug 2
+(2, 5, 1)
+Pour from jug 2 to jug 1
+(7, 0, 1)
+Pour from jug 3 to jug 2
+(7, 1, 0)
+Pour from jug 1 to jug 3
+(4, 1, 3)
+Pour from jug 3 to jug 2
+(4, 4, 0)
+Total cost: 27
+{'Time': 0.005097627639770508, 'Cost': 27, 'max_fringe_size': 60, 'visited_nodes': 22, 'iterations': 22}
+
+****************
+
+
+******** Uniform Cost ********
+
+Capacities: (8, 5, 3)
+Fill jug 2
+(0, 5, 0)
+Pour from jug 2 to jug 3
+(0, 2, 3)
+Pour from jug 3 to jug 1
+(3, 2, 0)
+Fill jug 3
+(3, 2, 3)
+Pour from jug 3 to jug 1
+(6, 2, 0)
+Pour from jug 2 to jug 3
+(6, 0, 2)
+Pour from jug 1 to jug 2
+(1, 5, 2)
+Pour from jug 2 to jug 3
+(1, 4, 3)
+Pour from jug 3 to jug 1
+(4, 4, 0)
+Total cost: 15
+{'Time': 0.021740198135375977, 'Cost': 15, 'max_fringe_size': 49, 'visited_nodes': 103, 'iterations': 103}
+
+****************
+
+
+******** Limited Depth First ********
+
+Capacities: (8, 5, 3)
+Fill jug 3
+(0, 0, 3)
+Pour from jug 3 to jug 2
+(0, 3, 0)
+Fill jug 3
+(0, 3, 3)
+Pour from jug 3 to jug 2
+(0, 5, 1)
+Pour from jug 3 to jug 1
+(1, 5, 0)
+Pour from jug 2 to jug 3
+(1, 2, 3)
+Pour from jug 3 to jug 1
+(4, 2, 0)
+Pour from jug 2 to jug 3
+(4, 0, 2)
+Fill jug 2
+(4, 5, 2)
+Pour from jug 2 to jug 3
+(4, 4, 3)
+Empty jug 3
+(4, 4, 0)
+Total cost: 21
+{'Time': 0.007807254791259766, 'Cost': 21, 'max_fringe_size': 38, 'visited_nodes': 45, 'iterations': 45}
+
+****************
+
+
+******** Iterative Limited Depth First ********
+
+Capacities: (8, 5, 3)
+Fill jug 3
+(0, 0, 3)
+Pour from jug 3 to jug 2
+(0, 3, 0)
+Fill jug 3
+(0, 3, 3)
+Pour from jug 3 to jug 2
+(0, 5, 1)
+Pour from jug 3 to jug 1
+(1, 5, 0)
+Pour from jug 2 to jug 3
+(1, 2, 3)
+Pour from jug 3 to jug 1
+(4, 2, 0)
+Pour from jug 2 to jug 3
+(4, 0, 2)
+Fill jug 2
+(4, 5, 2)
+Pour from jug 2 to jug 3
+(4, 4, 3)
+Empty jug 3
+(4, 4, 0)
+Total cost: 21
+{'Time': 0.03526759147644043, 'Cost': 21, 'max_fringe_size': 38, 'visited_nodes': 570, 'iterations': 570}
+
+****************
+
