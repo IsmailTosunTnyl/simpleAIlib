@@ -144,16 +144,16 @@ def algorithm_runner(problem, algorithm, header,depth_limit, graph_search):
 
 if __name__ == '__main__':
     initial_state = (0, 0, 0)
-    """c1 = input("Enter capacity of jug 1: ")
+    c1 = input("Enter capacity of jug 1: ")
     c2 = input("Enter capacity of jug 2: ")
     c3 = input("Enter capacity of jug 3: ")
     capacity = (int(c1), int(c2), int(c3))
     t1 = input("Enter target amount of water in jug 1: ")
     t2 = input("Enter target amount of water in jug 2: ")
     t3 = input("Enter target amount of water in jug 3: ")
-    goal_state = (int(t1), int(t2), int(t3))"""
-    goal_state = (4, 4, 0)
-    capacity = (8, 5, 3)
+    goal_state = (int(t1), int(t2), int(t3))
+    """goal_state = (4, 4, 0)
+    capacity = (8, 5, 3)"""
 
     problem = WaterJug(initial_state, goal_state,
                        capacity, is_cost_static=False)
